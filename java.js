@@ -1,6 +1,6 @@
 var paulo = {
   nome: "Paulo",
-  vitorias: 0,
+  vitorias: 2,
   empates: 0,
   derrotas: 0,
   pontos: 0,
@@ -11,7 +11,7 @@ var rafa = {
   vitorias: 1,
   empates: 0,
   derrotas: 0,
-  pontos: 0,
+  pontos: 7,
 };
 
 var alice = {
@@ -29,7 +29,13 @@ var lucas = {
   derrotas: 0,
   pontos: 0,
 };
-console.log(rafa.vitorias);
+calculaPontos(paulo);
+console.log(rafa.pontos);
+
+function calculaPontos(jogador) {
+  var pontos = jogador.vitorias * 3 + jogador.empates;
+  return pontos;
+}
 
 var jogadores = [paulo, rafa, alice, lucas];
 
@@ -41,7 +47,7 @@ function exibirJogadoresNaTela(jogadores) {
   for (var i = 0; i < jogadores.length; i++) {
     jogador = jogadores[i];
     jogador.pontos = calculaPontos(jogador);
-    html += "<tr><td>" + jogadores[i].nome + "</td>";
+    html += "<td>" + jogadores[i].nome + "</td>";
     html += "<td>" + jogadores[i].vitorias + "</td>";
     html += "<td>" + jogadores[i].empates + "</td>";
     html += "<td>" + jogadores[i].derrotas + "</td>";
